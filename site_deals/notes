@@ -16,3 +16,5 @@
   -In bin/site_deals, link to lib/site_deals/cli and lib/site_deals/version.
   -This creates a new instance of controller cli. set the call method, which starts list_deals, menu, goodbye
 6. Start making things real - we need brand name, url, items, price availability
+  -stub it out
+  -individual instances with 4 properties. add attribute accessors and code for instances.
