@@ -6,6 +6,12 @@
 2. Start with project structure
   -bundle gem site-deals - used Bundler to generate
   -create lib, bin, rake, README, gemspec
-3. Start with entry point - run site-deals
-  -defined execution point - the file where people will run program (./bin/site_deals).
+3. Start with entry point - run site-deals - create site_deals in bin folder.
+4. Force that to build CLI interface
+-defined execution point - the file where people will run program (./bin/site_deals).
+-try to get it working in terminal ("hello world"). Yay! it worked.
+5. Stub out Interface
+  -create class SiteDeals::CLI
+  -In bin/site_deals, link to lib/site_deals/cli and lib/site_deals/version.
   -This creates a new instance of controller cli. set the call method, which starts list_deals, menu, goodbye
+6. Start making things real - we need brand name, url, items, price availability
