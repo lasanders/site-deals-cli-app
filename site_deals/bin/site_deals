@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require './lib/site_deals'
+
+
+
+SiteDeals::CLI.new.call
