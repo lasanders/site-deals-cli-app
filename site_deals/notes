@@ -1,0 +1,11 @@
+1. Plan my Gem - imagine interface:
+  -create an interface to look for shopping deals on Gilt and Ruelala
+  -user will type site-deals
+  -different brands will be listed
+  -ask user to select brand if they'd like to see more
+2. Start with project structure
+  -bundle gem site-deals - used Bundler to generate
+  -create lib, bin, rake, README, gemspec
+3. Start with entry point - run site-deals
+  -defined execution point - the file where people will run program (./bin/site_deals).
+  -This creates a new instance of controller cli. set the call method, which starts list_deals, menu, goodbye

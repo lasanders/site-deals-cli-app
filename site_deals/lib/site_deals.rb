@@ -1,5 +1,2 @@
-require "site_deals/version"
-
-module SiteDeals
-  # Your code goes here...
-end
+require_relative "./site_deals/version"
+require_relative './site_deals/cli'
