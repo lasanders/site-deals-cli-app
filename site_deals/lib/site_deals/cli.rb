@@ -8,10 +8,7 @@ class SiteDeals::CLI
   end
 
 def list_deals
-  puts <<-DOC
-  1. Joie and soft Joie -ruelala
-  2. Theory - Gilt
-DOC
+@deals = SiteDeals::Deals.today
 end
 
 def menu
