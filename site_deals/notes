@@ -6,6 +6,7 @@
 2. Start with project structure
   -bundle gem site-deals - used Bundler to generate
   -create lib, bin, rake, README, gemspec
+<<<<<<< HEAD
 3. Start with entry point - run site-deals - create site_deals in bin folder.
 4. Force that to build CLI interface
 -defined execution point - the file where people will run program (./bin/site_deals).
