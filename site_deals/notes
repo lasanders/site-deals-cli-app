@@ -15,6 +15,11 @@
   -create class SiteDeals::CLI
   -In bin/site_deals, link to lib/site_deals/cli and lib/site_deals/version.
   -This creates a new instance of controller cli. set the call method, which starts list_deals, menu, goodbye
-6. Start making things real - we need brand name, url, items, price availability
+6. Start making things real - we need brand name, url, price availability
   -stub it out
-  -individual instances with 4 properties. add attribute accessors and code for instances.
+  -individual instances with properties. add attribute accessor and code for instances.
+  -reconstruct menu and list_deals methods to set instance variable @deals and set @deals = the_deal.
+  -reconstruct self.today method to make deal_1 and deal_2 real.
+  -replace our fake data by scraping ruelala and Gilt, return deals based on that data.
+  -create new class method scrape_deals - that goes to both Gilt and Ruelala to find the brands on sale, extract properties, and instantiate a deal
+  -add dependencies to gem.spec file - add pry, Nokogiri, add 'require' nokogiri to site_deals.rb
