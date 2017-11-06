@@ -12,6 +12,8 @@ end
 
 def self.scrape_deals
   deals = []
+
+  deals << self.scrape.ruelala
   # deal_1 = self.new
   # deal_1.name = "Joie and soft Joie"
   # deal_1.availability = true
@@ -24,4 +26,8 @@ def self.scrape_deals
 
   deals
   end
+
+  def self.scrape_ruelala
+    doc = Nokogiri::HTML(open("https://ruelala.com"))
+    binding.pry
 end
