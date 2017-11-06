@@ -9,6 +9,9 @@ class SiteDeals::CLI
 
 def list_deals
 @deals = SiteDeals::Deals.today
+@deals.each.with_index(1) do |deal, i|
+  puts "#{i}. #{deal.name} - #{deal.availability}"
+end
 end
 
 def menu
@@ -16,12 +19,11 @@ input = nil
 while input != "exit"
   puts "Please select brand to see products or type list to see brands again or type exit:"
   input = gets.strip.downcase
-  case input
-  when "1"
-    puts "More info on brand 1..."
-  when "2"
-    puts "More info on brand 2..."
-  when "list"
+
+  if input.to_i > 0
+    the_deal = @deals[input.to_i-1]
+    puts "#{the_deal.name} - #{the_deal.availability}"
+  elsif input == "list"
     list_deals
   else
     puts "I didn't understand. Please select brand, list, or exit."
