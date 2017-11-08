@@ -1,8 +1,7 @@
-# SiteDeals
+Site Deals
+This Ruby Gem provides a CLI to check Shopbop and Gilt for daily sales.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/site_deals`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After the gem installation, run site_deals to see 2 daily sales from Gilt and Shopbop.
 
 ## Development
 
@@ -38,4 +37,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/'laras
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
