@@ -1,4 +1,4 @@
-Site Deals
+site-deals-cli-app
 This Ruby Gem provides a CLI to check Shopbop and Gilt for daily sales.
 
 
