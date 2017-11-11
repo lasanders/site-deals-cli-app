@@ -14,7 +14,7 @@ class SiteDeals::CLI
     #   puts "#{the_deal}"
     @deals.each.with_index(1) do |deal, i|
       # dealer.each.with_index(1) do |deal, i|
-        puts  "#{i}. #{deal}"
+        puts  "#{i}. #{deal.name}"
         #binding.pry
       end
     end
@@ -28,30 +28,18 @@ class SiteDeals::CLI
     while input != "exit"
       puts "Please select brand to see products or type list to see brands again or type exit:"
       input = gets.strip.downcase
-binding.pry
+#binding.pry
       if input.to_i == 1
         the_deal = @deals[input.to_i-1]
 
-            puts "#{the_deal[0]} #{the_deal.title}- #{the_deal.price}"
+            puts "#{the_deal.name} - #{the_deal.title} - #{the_deal.price}"
+            puts "For this product, please visit #{the_deal.url}"
 
-          # the_deal = @deals[input.to_i-1]
-        # @deals.each.with_index(1) do |deal, i|
-        # #   puts "#{i}. #{deal}.name - #{deal}.title- #{deal}.price"
-
-        # puts "#{the_deal.name} - #{the_deal.title} - #{the_deal.price}"
-        # puts "For this product and similar products: https://www.shopbop.com"
-        #   the_deal = @deals_1[input.to_i-1]
-        #   puts "#{the_deal}"
-        # the_deal = @deals[input.to_i-1]
-        # puts "#{the_deal.name} - #{the_deal.title} - #{the_deal.price}"
-
-        # elsif input.to_i == 1
-        # the_deal_1 = @deals[input.to_i-1]
-        #  puts "the_deal.name - the_deal.title - the_deal.price"
-        #   puts "For this product and similar products: https://www.shopbop.com"
       elsif input.to_i == 2
-        the_deal_2 = @deals[input.to_i-1]
-        puts "For this product and similar products: https://www.gilt.com"
+          the_deal = @deals[input.to_i-1]
+
+              puts "#{the_deal.name} - #{the_deal.title} - #{the_deal.price}"
+              puts "For this product, please visit #{the_deal.url}"
       elsif input == "list"
         list_deals
       else

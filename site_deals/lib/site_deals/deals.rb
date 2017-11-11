@@ -8,11 +8,11 @@ end
 
 def self.scrape_deals
    deals = []
-  deals_1 = []
+
   deals << self.scrape_shopbop
-  deals << self.scrape_gilt
-  deals << self.get_brands
-  deals.split(",")
+  deals << self.scrape_revolve
+  # deals << self.get_brands
+  # deals.split(",")
 
   end
 
@@ -27,30 +27,17 @@ def self.scrape_deals
   deals
 end
 
-def self.scrape_gilt
-   deals = self.new
+def self.scrape_revolve
+   deal = self.new
   doc = Nokogiri::HTML(open("http://www.revolve.com/new/20171110/br/165f75/?navsrc=main"))
-  binding.pry
-doc.search("a.div.class.plp-name.h1.product-titles__name.product-titles__name--sm.u-margin-b--none.js-plp-name")
-doc.search("plp-brand product-titles__brand product-titles__brand--font-primary u-line-height--lg js-plp-brand")
 
-   deals.name = doc.search("a div.plp-name.h1.plp-name").children.text.strip
-   deals.title = doc.search("a div.plp-brand.js-plp-brand").children.text.strip
-   deals.price = doc.search("a span.plp_price").children.text
-   deals.url = doc.search("h1 a[href]").first.attr("href").strip
-   deals
-end
 
-def self.get_brands
-  deals = self.new
+   deal.name = doc.search("a div.plp-name.h1.plp-name").first.children.text.strip
+   deal.title = doc.search("a div.plp-brand.js-plp-brand").first.children.text.strip
+   deal.price = doc.search("a span.plp_price").first.children.text
 
-   doc_1 = Nokogiri::HTML(open("https://www.gilt.com/"))
-
-   deals.name = doc_1.search("h1.sale-name").map {|sale| sale.text}.compact
-
-    #binding.pry
-
-    deals.name
+   deal.url =   doc.search( "div.plp_image_wrap a img").attr("src").value.strip
+   deal
 
 end
 end
