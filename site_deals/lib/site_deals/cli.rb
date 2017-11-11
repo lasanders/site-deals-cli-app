@@ -33,13 +33,13 @@ class SiteDeals::CLI
         the_deal = @deals[input.to_i-1]
 
             puts "#{the_deal.name} - #{the_deal.title} - #{the_deal.price}"
-            puts "For this product, please visit #{the_deal.url}"
+            puts "For this product, please visit https://www.shopbop.com#{the_deal.url}"
 
       elsif input.to_i == 2
           the_deal = @deals[input.to_i-1]
 
               puts "#{the_deal.name} - #{the_deal.title} - #{the_deal.price}"
-              puts "For this product, please visit #{the_deal.url}"
+              puts "For this product, please visit https://www.revolve.com#{the_deal.url}"
       elsif input == "list"
         list_deals
       else

@@ -23,7 +23,8 @@ def self.scrape_deals
   deals.name = doc.search("div.brand").first.text.strip
   deals.title = doc.search("div.title").first.text.strip
   deals.price = doc.search("span.retail-price").first.text.strip
-  deals.url = doc.search("span.productBrowseMainImage img").attribute("src").value.strip
+  deals.url = doc.search("div.info.clearfix a[href]").attr("href").value
+  #binding.pry
   deals
 end
 
@@ -35,8 +36,8 @@ def self.scrape_revolve
    deal.name = doc.search("a div.plp-name.h1.plp-name").first.children.text.strip
    deal.title = doc.search("a div.plp-brand.js-plp-brand").first.children.text.strip
    deal.price = doc.search("a span.plp_price").first.children.text
-
-   deal.url =   doc.search( "div.plp_image_wrap a img").attr("src").value.strip
+#binding.pry
+   deal.url =  doc.search("div.u-text-decoration-none a[href]").attr("href").value
    deal
 
 end
