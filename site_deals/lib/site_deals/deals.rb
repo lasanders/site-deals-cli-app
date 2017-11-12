@@ -29,21 +29,16 @@ def self.scrape_deals
 end
 
 def self.scrape_revolve
-   deals = self.new
+   deal = self.new
   doc = Nokogiri::HTML(open("http://www.revolve.com/new/all-new-items/br/7f5946/?navsrc=subnew_i1"))
-  doc.css("li.gc.u-center.js-plp-container").collect do |deals|
 
-deals_info = {
-  :name => deals.css("a div.plp-brand.js-plp-brand").children.text.strip,
-  :title => deals.css("a div.plp-name.h1.plp-name").children.text.strip,
+  deal.name = doc.search("a div.plp-brand.js-plp-brand").first.children.text.strip
+   deal.title = doc.search("a div.plp-name.h1.plp-name").first.children.text.strip
 
-  :price => deals.css("a span.plp_price").children.text,
-  :item_url => deals.css("a[href]").attr("href").value
-}
-binding.pry
+   deal.price = doc.search("a span.plp_price").first.children.text
+#binding.pry
+   deal.url =  doc.search("div.u-text-decoration-none a[href]").attr("href").value
+   deal
 
-
-   deals_info
-end
 end
 end
