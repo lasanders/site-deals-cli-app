@@ -4,4 +4,5 @@ require './lib/site_deals'
 
 
 
+
 SiteDeals::CLI.new.call

@@ -12,12 +12,20 @@ class SiteDeals::CLI
     # @deals.each.with_index(1) do |deal, i|
     #   puts "#{i}. #{deal}.name - #{deal}.title- #{deal}.price"
     #   puts "#{the_deal}"
-    @deals.each.with_index(1) do |deal, i|
+      @deals.each.with_index(1) do |deal, i|
       # dealer.each.with_index(1) do |deal, i|
-        puts  "#{i}. #{deal.name}"
+    #  binding.pry
+         puts  "#{i}. #{deal.name}"
+        # puts @deals[:name]
+        # @deals.each.with_index(1) do |d, i|
+        #  binding.pry
+          # d.each do |k, v|
+          #   puts ="#{i}. #{k} => #{v}"
         #binding.pry
       end
-    end
+
+end
+
 
 
 
@@ -29,7 +37,7 @@ class SiteDeals::CLI
       puts "Please select brand to see products or type list to see brands again or type exit:"
       input = gets.strip.downcase
 #binding.pry
-      if input.to_i == 1
+      if input.to_i.between?(1,@deals.count)
         the_deal = @deals[input.to_i-1]
 
             puts "#{the_deal.name} - #{the_deal.title} - #{the_deal.price}"
