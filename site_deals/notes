@@ -174,3 +174,37 @@ Really tried to make it better, but can't figure out how to pair the brand, item
   #     deals.name
   #
   # end
+
+  #     deals.name = info.css("div.js-plp-brand").text
+  #     deals.title = info.css("div.js-plp-name").text
+  #     deals.price = info.css("a span.plp_price").text
+  # #binding.pry
+  #    deals.url =  info.css("a img.js-plp-image").attr("src").value
+  #    deals
+  #   # doc.search("a img.js-plp-image").attr("src").value
+  # end
+  #   def self.scrape_shopbop
+  #   doc = Nokogiri::HTML(open("https://www.shopbop.com/new-today/br/v=1/50579.htm"))
+  #   self.new
+  #   deals.name = doc.search("div.brand").text.strip
+  #   deals.title = doc.search("div.title").first.text.strip
+  #   deals.price = doc.search("span.retail-price").first.text.strip
+  #   deals.url = doc.search("div.info.clearfix a[href]").attr("href").value
+  #   #binding.pry
+  #   deals
+  # end
+  #
+  # def self.scrape_revolve
+  #    deal = Deals.new
+  #   doc = Nokogiri::HTML(open("http://www.revolve.com/new/all-new-items/br/7f5946/?navsrc=subnew_i1"))
+  #
+  #   deal.name = doc.search("a div.plp-brand.js-plp-brand").first.children.text.strip
+  #    deal.title = doc.search("a div.plp-name.h1.plp-name").first.children.text.strip
+  #
+  #    deal.price = doc.search("a span.plp_price").first.children.text
+  # #binding.pry
+  #    deal.url =  doc.search("div.u-text-decoration-none a[href]").attr("href").value
+  #    deal
+  #
+  # end
+  # end
