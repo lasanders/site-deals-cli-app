@@ -1,3 +1,4 @@
+require 'pry'
 class SiteDeals::CLI
   #Our CLI Controller
 
@@ -8,12 +9,18 @@ class SiteDeals::CLI
   end
 
   def list_deals
-    @@deals= SiteDeals::Deals.today
-    @@deals.each.with_index(1) do |deal, i|
+    @@deals= SiteDeals::Deals.today.uniq do |deal|
       if deal !=0
-        puts  "#{i}. #{deal.name}"
+      # binding.pry
+        deal.name
       end
     end
+    @@deals.each.with_index(1) do |deal, i|
+      if deal !=0
+        puts "#{i}. #{deal.name}"
+      end
+    end
+  end
 
     def menu
       @deals = SiteDeals::Deals.today
